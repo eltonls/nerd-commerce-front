@@ -1,0 +1,14 @@
+.logo {
+  @apply text-2xl; 
+  @apply font-bold;
+}
+
+.logo__text {
+  font-family: 'Mali', cursive;;
+  @apply tracking-widest;
+}
+
+.highlight {
+  @apply relative;
+  @apply block;
+}

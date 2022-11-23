@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+.section-login {
+  @apply flex flex-row justify-center items-center;
+  @apply h-screen;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  @apply px-5 py-2 rounded;
+  @apply font-bold tracking-wider;
+  @apply block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn--main {
+  @apply bg-english-violet text-white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form {
+  @apply p-5 py-2;
+
+  @apply w-96;
 }
 
-.App-link {
-  color: #61dafb;
+.form--login > .logo {
+  @apply mb-16;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form > .btn {
+  @apply mx-auto;
+  @apply w-full;
+}
+
+.form__label {
+  @apply block;
+  @apply mb-2;
+  @apply text-base;
+}
+
+.form__input {
+  @apply block;
+  @apply p-2;
+  @apply mx-auto;
+  @apply mb-4;
+  @apply w-full;
+
+  @apply bg-white;
+  @apply border border-light-gray rounded;
+  @apply text-base;
+}
+
+.form__input::placeholder{
+  @apply text-sm;
+}
+
+.heading-secondary {
+  @apply text-black text-left text-xl;
+}
+
+.heading-tertiary {
+  @apply italic text-black text-left;
+  @apply opacity-40;
+  @apply text-sm;
+  @apply mb-6;
 }
