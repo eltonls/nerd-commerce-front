@@ -1,0 +1,25 @@
+.user-nav {
+  @apply absolute bottom-3 left-1/2;
+  @apply -translate-x-1/2;
+
+  @apply md:translate-x-0;
+  @apply md:relative md:bottom-0 md:left-0;
+}
+
+.user-nav__menu {
+  @apply flex flex-row;
+
+  @apply text-gray-600;
+}
+
+.user-nav__item {
+  @apply text-4xl;
+
+  @apply md:text-2xl;
+}
+
+.user-nav__item:not(:last-child) {
+  @apply md:pr-5 md:mr-5;
+  @apply border border-transparent;
+  @apply border border-r-gray-300;
+} 

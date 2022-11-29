@@ -1,0 +1,6 @@
+.hamburguer {
+  @apply text-xl;
+  @apply z-50;
+
+  @apply md:hidden;
+}

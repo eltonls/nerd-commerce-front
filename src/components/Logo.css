@@ -1,14 +1,15 @@
 .logo {
-  @apply text-2xl; 
+  @apply text-xl;
   @apply font-bold;
 }
 
 .logo__text {
   font-family: 'Mali', cursive;;
-  @apply tracking-widest;
+  @apply tracking-wide;
+  @apply text-english-violet;
 }
 
 .highlight {
   @apply relative;
-  @apply block;
+  @apply text-emerald-400;
 }

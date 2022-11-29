@@ -1,0 +1,23 @@
+.search-bar {
+  @apply hidden;
+
+
+  @apply md:block;
+  @apply mx-10;
+  @apply w-80;
+  @apply relative;
+}
+
+.search-bar__input {
+  @apply w-full;
+  @apply rounded-2xl border border-gray-300;
+  @apply pl-8 py-1.5;
+}
+
+.search-bar__btn {
+  @apply absolute left-2 top-2.5;
+}
+
+.search-bar__icon {
+  @apply text-gray-700 font-bold;
+}

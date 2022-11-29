@@ -1,0 +1,30 @@
+.dropdown {
+  @apply text-gray-400;
+}
+
+.dropdown__menu {
+  @apply absolute -left-10 z-10;
+  @apply text-left;
+  @apply bg-gray-400 text-white;
+  @apply rounded;
+  @apply overflow-hidden;
+}
+
+.dropdown__item:not(:last-child) {
+  @apply mb-2;
+}
+
+.dropdown__link {
+  @apply block;
+  @apply w-full h-full;
+  @apply px-5 py-2;
+}
+
+.dropdown__link:hover {
+  @apply bg-emerald-400;
+}
+
+.dropdown__icon {
+  @apply ml-2;
+  @apply text-xs;
+}

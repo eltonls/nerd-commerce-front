@@ -1,0 +1,42 @@
+.nav-active {
+  @apply w-screen h-screen;
+  @apply fixed top-0 left-0;
+  @apply bg-white;
+  @apply flex flex-col justify-center items-center;
+
+  @apply md:w-2/4 md:h-auto;
+  @apply md:flex md:flex-row md:justify-between md:items-baseline; 
+  @apply md:relative md:top-auto md:left-auto;
+}
+
+.nav-inactive {
+  @apply hidden;
+
+  @apply md:w-2/4;
+  @apply md:flex md:flex-row md:justify-between md:items-baseline; 
+  @apply md:relative;
+}
+
+.nav__menu {
+  @apply flex flex-col justify-center; 
+
+  @apply md:flex-row md:justify-between;
+}
+
+.nav__item {
+  @apply py-5;
+  @apply md:pr-6;
+  @apply flex flex-row items-baseline;
+
+  @apply relative;
+}
+
+.nav__item:not(:last-child) {
+  
+
+
+  @apply md:mr-5;
+  @apply border border-transparent;
+  @apply md:border md:border-r-gray-300;
+}
+
