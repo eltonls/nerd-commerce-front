@@ -1,0 +1,9 @@
+.product-list {
+  @apply flex flex-col justify-between items-center;
+
+  @apply bg-white;
+
+  @apply p-5;
+
+  @apply md:flex-row md:items-start md:flex-wrap;
+}

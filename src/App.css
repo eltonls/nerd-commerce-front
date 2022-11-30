@@ -4,13 +4,22 @@
 }
 
 .btn {
-  @apply px-5 py-2 rounded;
+  @apply px-5 py-2 rounded text-center;
   @apply font-bold tracking-wider;
   @apply block;
 }
 
 .btn--main {
-  @apply bg-english-violet text-white;
+  @apply bg-emerald-400 text-white;
+}
+
+.btn--cart {
+  @apply text-white bg-gray-400;
+  @apply opacity-40;
+}
+
+.btn--cart:hover {
+  @apply opacity-100;
 }
 
 .form {

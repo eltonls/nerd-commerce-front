@@ -3,24 +3,11 @@ import Styles from "./Slide.module.css";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
 
 const Slide = () => {
-  const [images, setImages] = useState([]);
-  const [slideCount, setSlideCount] = useState(0);
-  const endpoint = "https://picsum.photos/v2/list";
+  // const [images, setImages] = useState([]);
+  // const [slideCount, setSlideCount] = useState(0);
+  // const endpoint = "https://api.lorem.space/image/fashion";
 
-  useEffect(() => {
-    fetch(endpoint)
-      .then((image) => {
-        image.json()
-          .then((image) => {
-            console.log(image);
-            setImages(image);
-          })
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }, [])
-
+  /*
   const slideMinusClickHandler = () => {
     setSlideCount((lastNum) => {
       return lastNum - 1;
@@ -32,14 +19,15 @@ const Slide = () => {
       return lastNum + 1;
     })
   }
+  */
 
   return (
     <div className={Styles["slide"]} >
-      <button className={Styles["slide__btn--left"]} onClick={slideMinusClickHandler}>
+      <button className={Styles["slide__btn--left"]} > 
         <AiOutlineArrowLeft className={Styles["slide__icon"]} />
       </button>
-      <img src={images[slideCount].url} className={Styles["slide__img"]} alt="" />
-      <button className={Styles["slide__btn--right"]} onClick={slidePlusClickHandler}>
+      <img src="https://img.freepik.com/free-vector/shopping-time-banner-with-realistic-map-cart-gift-bags-vector-illustration_548887-120.jpg" className={Styles["slide__img"]} alt="" />
+      <button className={Styles["slide__btn--right"]}>
         <AiOutlineArrowRight className={Styles["slide__icon"]} />
       </button>
     </div>
