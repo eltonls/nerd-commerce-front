@@ -1,0 +1,33 @@
+.slide {
+  @apply relative;
+  @apply w-full h-96;
+  @apply flex flex-row;
+}
+
+.slide__img {
+  @apply bg-red-500;
+  @apply w-full h-full;
+}
+
+.slide__btn--left,
+.slide__btn--right {
+  @apply h-full;
+  @apply px-2;
+  @apply absolute; 
+  @apply text-4xl;
+  @apply text-white;
+  @apply transition-transform duration-300;
+}
+
+.slide__btn--left {
+  @apply left-0;
+}
+
+.slide__btn--right {
+  @apply right-0;
+}
+
+.slide__btn--left:hover,
+.slide__btn--right:hover {
+  @apply scale-x-105;
+}
