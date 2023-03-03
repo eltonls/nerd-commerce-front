@@ -21,7 +21,7 @@ const DUMMY_LIST = [
 
 const Cart = () => {
   return (
-    <Box> 
+    <Box sx={{ py: 2}}> 
       <Typography
         variant="h4"
         align="center"
