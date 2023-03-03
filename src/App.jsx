@@ -1,12 +1,15 @@
 import './App.css'
 import Cart from "./components/cart/Cart"
 import Header from "./components/header/Header"
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Router>  
+      <div className="App">
+        <Header />
+      </div>
+    </Router>
   )
 }
 

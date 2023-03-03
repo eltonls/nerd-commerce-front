@@ -1,5 +1,6 @@
 import CartList from "./CartList"
 import { Box, Typography } from "@mui/material"
+import Divider from "@mui/material/Divider";
 
 const DUMMY_LIST = [
   {
@@ -23,12 +24,13 @@ const Cart = () => {
   return (
     <Box sx={{ py: 2}}> 
       <Typography
-        variant="h4"
+        variant="h6"
         align="center"
         sx={{ textTransform: "uppercase" }}
       >
         Cart
       </Typography>
+      <Divider />
       <CartList items={DUMMY_LIST} /> 
     </Box>
   )
