@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import Cart from "./components/cart/Cart"
 
 function App() {
   return (
     <div className="App">
-      
+      <Cart /> 
     </div>
   )
 }
