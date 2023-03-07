@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  List, 
-  ListItem, 
-  IconButton, 
-  ListItemText, 
-  ListItemAvatar,
-  Avatar
-} from "@mui/material"
-import DeleteIcon from "@mui/icons-material/Delete"
+import { List, ListItem, IconButton, ListItemText, ListItemAvatar, Avatar } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const CartList = (props) => {
   return (
@@ -20,24 +13,17 @@ const CartList = (props) => {
             <IconButton edge="end" aria-label="delete">
               <DeleteIcon />
             </IconButton>
-          }
-        >
+          }>
           <ListItemAvatar>
             <Avatar alt={item.alt} src="../../assets/react.svg" />
           </ListItemAvatar>
           <ListItemText
             primary={item.name}
-            secondary={
-              <React.Fragment>
-                {item.price}
-              </React.Fragment>
-            }
-          >
-          </ListItemText>
+            secondary={<React.Fragment>{item.price}</React.Fragment>}></ListItemText>
         </ListItem>
       ))}
     </List>
-  )
-}
+  );
+};
 
 export default CartList;
