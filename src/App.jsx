@@ -1,15 +1,17 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/header/Header";
-import ProductList from "./components/products/ProductList";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ProductPage from "./pages/ProductsPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <ProductList />
+        <Routes>
+          <Route exact path="/" element={<ProductPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
       </div>
     </Router>
   );

@@ -1,3 +1,4 @@
+import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
@@ -21,7 +22,7 @@ const Nav = () => {
         <ListItem disablePadding>
           <ListItemButton sx={{ textAlign: "center" }}>
             <ListItemText>
-              <Link component={RouterLink} to="/produtos">
+              <Link component={RouterLink} to="/">
                 Produtos
               </Link>
             </ListItemText>
@@ -30,7 +31,7 @@ const Nav = () => {
         <ListItem disablePadding>
           <ListItemButton sx={{ textAlign: "center" }}>
             <ListItemText>
-              <Link component={RouterLink} to="/sobre">
+              <Link component={RouterLink} to="/about">
                 Sobre
               </Link>
             </ListItemText>
