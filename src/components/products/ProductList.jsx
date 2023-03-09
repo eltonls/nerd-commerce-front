@@ -1,11 +1,45 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useEffect } from "react";
 import List from "@mui/material/List";
+import { fetchProducts } from "../../features/ProductSlice";
+import { useSelector, useDispatch } from "react-redux";
 import ListItem from "@mui/material/ListItem";
 import ProductCard from "./ProductCard";
 
-function ProductList(props) {
-  const { products } = props;
+function ProductList() {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => {
+    console.log(state.products);
+    return state.products.items;
+  });
+  const productFetchStatus = useSelector((state) => state.products.status);
+  const productsError = useSelector((state) => state.products.error);
+
+  useEffect(() => {
+    if (productFetchStatus === "idle") {
+      dispatch(fetchProducts());
+    }
+  }, [productFetchStatus, dispatch]);
+
+  let content;
+
+  if (productFetchStatus === "succeeded") {
+    content = products.map((product) => (
+      <ListItem key={product.id}>
+        <ProductCard
+          id={product.id}
+          name={product.name}
+          price={product.price}
+          brand={product.brand}
+          description={product.description}
+          imageUrl={product.imageUrl}
+        />
+      </ListItem>
+    ));
+  } else if (productFetchStatus === "loading") {
+    content = <h5>Loading Products</h5>;
+  } else if (productFetchStatus === "failed") {
+    content = <h5>Oops! Something went wrong: {productsError}</h5>;
+  }
 
   return (
     <List
@@ -14,22 +48,11 @@ function ProductList(props) {
         flexWrap: "wrap",
         flexDirection: { sm: "column", md: "row" },
         alignItems: "center"
-      }}>
-      {products.map((product) => (
-        <ListItem key={product.id}>
-          <ProductCard
-            name={product.name}
-            brand={product.brand}
-            description={product.description}
-          />
-        </ListItem>
-      ))}
+      }}
+    >
+      {content}
     </List>
   );
 }
-
-ProductList.propTypes = {
-  products: PropTypes.array.isRequired
-};
 
 export default ProductList;

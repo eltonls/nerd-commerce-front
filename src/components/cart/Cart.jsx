@@ -25,7 +25,7 @@ const Cart = () => {
   return (
     <Box sx={{ py: 2 }}>
       <Typography variant="h6" align="center" sx={{ textTransform: "uppercase" }}>
-        Cart
+        Carrinho
       </Typography>
       <Divider />
       <CartList items={DUMMY_LIST} />

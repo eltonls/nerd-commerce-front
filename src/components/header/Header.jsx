@@ -11,67 +11,49 @@ const Header = () => {
 
   const handleCartOpen = () => {
     setIsCartOpen((prevState) => !prevState);
-  }
+  };
 
   const handleNavOpen = () => {
     setIsNavOpen((prevState) => !prevState);
-  }
+  };
 
   return (
-    <Box sx={{flexGrow: 1}}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar 
-          sx={{ 
-            display: {sm: "flex", md: "none"}, 
-            justifyContent: "space-between" 
-          }} 
-        >            
-          <IconButton 
-            onClick={handleNavOpen}
-            size="medium"
-            edge="start"
-            color="inherit"
-          >
+        <Toolbar
+          sx={{
+            display: { sm: "flex", md: "none" },
+            justifyContent: "space-between"
+          }}
+        >
+          <IconButton onClick={handleNavOpen} size="medium" edge="start" color="inherit">
             <MenuIcon />
           </IconButton>
-          <Drawer 
+          <Drawer
             anchor="left"
             onClose={handleNavOpen}
             open={isNavOpen}
             ModalProps={{
-              keepMounted: true, // Better performance for mobile
+              keepMounted: true // Better performance for mobile
             }}
             sx={{
-              display: { sm: "block", md: "none"},
-              "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240},
+              display: { sm: "block", md: "none" },
+              "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 }
             }}
           >
             <Nav />
           </Drawer>
-          <Typography 
-            variant="h6"
-          >
-            Nerd Commerce
-          </Typography>  
-          <IconButton 
-            onClick={handleCartOpen}
-            size="medium"
-            edge="end"
-            color="inherit"
-          >
+          <Typography variant="h6">Nerd Commerce</Typography>
+          <IconButton onClick={handleCartOpen} size="medium" edge="end" color="inherit">
             <ShoppingBasketIcon />
           </IconButton>
-          <Drawer 
-            anchor="right"
-            onClose={handleCartOpen}
-            open={isCartOpen}
-          >
+          <Drawer anchor="right" onClose={handleCartOpen} open={isCartOpen}>
             <Cart />
           </Drawer>
         </Toolbar>
       </AppBar>
-    </Box> 
-  )
-}
+    </Box>
+  );
+};
 
 export default Header;
