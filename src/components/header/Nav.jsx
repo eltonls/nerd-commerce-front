@@ -6,35 +6,39 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { Link as RouterLink } from "react-router-dom"
+import { Link as RouterLink } from "react-router-dom";
 
-const navItems = ["Produtos", "Sobre Nós"]
+const navItems = ["Produtos", "Sobre Nós"];
 
 const Nav = () => {
   return (
-    <Box sx={{ textAlign: "center"}}> 
-      <Typography variant="h6" sx={{ my: 2}}>
+    <Box sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
         Nerd Commerce
       </Typography>
       <Divider />
       <List>
         <ListItem disablePadding>
-          <ListItemButton sx={{ textAlign: "center"}}>
+          <ListItemButton sx={{ textAlign: "center" }}>
             <ListItemText>
-              <Link component={RouterLink} to="/produtos">Produtos</Link>
+              <Link component={RouterLink} to="/produtos">
+                Produtos
+              </Link>
             </ListItemText>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton sx={{ textAlign: "center"}}>
+          <ListItemButton sx={{ textAlign: "center" }}>
             <ListItemText>
-              <Link component={RouterLink} to="/sobre">Sobre</Link>
+              <Link component={RouterLink} to="/sobre">
+                Sobre
+              </Link>
             </ListItemText>
           </ListItemButton>
         </ListItem>
       </List>
-    </Box> 
-  )
-}
+    </Box>
+  );
+};
 
 export default Nav;

@@ -49,11 +49,7 @@ const CartItem = (props) => {
           >
             <AddCircleIcon />
           </IconButton>
-          <IconButton
-            edge="start"
-            aria-label="subtract a unit"
-            onClick={removeOneUnitHandler}
-          >
+          <IconButton edge="start" aria-label="subtract a unit" onClick={removeOneUnitHandler}>
             <RemoveCircleIcon />
           </IconButton>
         </CardActions>
