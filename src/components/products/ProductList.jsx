@@ -24,7 +24,7 @@ function ProductList() {
 
   if (productFetchStatus === "succeeded") {
     content = products.map((product) => (
-      <ListItem key={product.id}>
+      <ListItem key={product.id} sx={{ width: "100%", maxWidth: 400, height: 500 }}>
         <ProductCard
           id={product.id}
           name={product.name}
@@ -47,7 +47,8 @@ function ProductList() {
         display: "flex",
         flexWrap: "wrap",
         flexDirection: { sm: "column", md: "row" },
-        alignItems: "center"
+        alignItems: "center",
+        justifyContent: "space-around"
       }}
     >
       {content}

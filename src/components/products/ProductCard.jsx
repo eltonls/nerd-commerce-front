@@ -12,8 +12,8 @@ const ProductCard = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <Card sx={{ width: "100%" }}>
-      <CardMedia sx={{ height: 200 }} image={imageUrl} title="Thi" />
+    <Card sx={{ width: "100%", height: "100%" }}>
+      <CardMedia sx={{ height: 280 }} image={imageUrl} title="Thi" />
       <CardContent>
         <Typography variant="h5" component="h3">
           {name}

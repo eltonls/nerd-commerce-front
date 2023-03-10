@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import { Typography, Box, AppBar, Drawer, Toolbar, IconButton } from "@mui/material";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import Link from "@mui/material/Link";
+import { Link as RouterLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import Cart from "../cart/Cart";
@@ -22,11 +29,36 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar
           sx={{
-            display: { sm: "flex", md: "none" },
             justifyContent: "space-between"
           }}
         >
-          <IconButton onClick={handleNavOpen} size="medium" edge="start" color="inherit">
+          <List sx={{ display: { xs: "none", md: "flex" } }}>
+            <ListItem disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText>
+                  <Link component={RouterLink} to="/" sx={{ color: "white" }}>
+                    Produtos
+                  </Link>
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText>
+                  <Link component={RouterLink} to="/about" sx={{ color: "white" }}>
+                    Sobre
+                  </Link>
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </List>
+          <IconButton
+            onClick={handleNavOpen}
+            size="medium"
+            edge="start"
+            color="inherit"
+            sx={{ display: { xs: "block", md: "none" } }}
+          >
             <MenuIcon />
           </IconButton>
           <Drawer
