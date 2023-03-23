@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import Card from "@mui/material/Card";
 import PropTypes from "prop-types";
 import CardActions from "@mui/material/CardActions";
@@ -9,20 +10,31 @@ import TextField from "@mui/material/TextField";
 import { addProduct } from "../../features/CartSlice";
 import { useDispatch } from "react-redux";
 import { IconButton, CardContent, CardMedia, Typography, Container } from "@mui/material";
+import AlertNewProduct from "../alerts/AlertNewProduct";
 import "./productCard.css";
 
 const ProductCard = (props) => {
   const [addTrayIsOpen, setAddTrayIsOpen] = useState(false);
+  const [isAlertShown, setIsAlertShown] = useState(false);
   const [units, setUnits] = useState(0);
   const { price, name, imageUrl } = props;
 
   const dispatch = useDispatch();
+
+  const showSuccessAlert = () => {
+    setIsAlertShown(true);
+
+    setTimeout(() => {
+      setIsAlertShown(false);
+    }, 2000);
+  };
 
   const openTrayHandler = () => {
     setAddTrayIsOpen(true);
   };
 
   const addProductHandler = () => {
+    showSuccessAlert();
     dispatch(addProduct({ ...props, units: units }));
   };
 
@@ -68,6 +80,7 @@ const ProductCard = (props) => {
       >
         Adicionar
       </Button>
+      {isAlertShown && ReactDOM.createPortal(<AlertNewProduct />, document.getElementById("alert"))}
     </CardActions>
   );
 
