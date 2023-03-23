@@ -10,13 +10,13 @@ export const cartSlice = createSlice({
       if (state.items.find((element) => element.id === action.payload.id)) {
         state.items.map((item) => {
           if (item.id === action.payload.id) {
-            return [item, item.unit++];
+            return [item, (item.unit += action.payload.units)];
           } else {
             return item;
           }
         });
       } else {
-        state.items.push({ ...action.payload, unit: 1 });
+        state.items.push({ ...action.payload, unit: action.payload.units });
       }
     },
     removeProduct: (state, action) => {
@@ -32,11 +32,20 @@ export const cartSlice = createSlice({
           return item;
         }
       });
+    },
+    addOneUnit: (state, action) => {
+      state.items.map((item) => {
+        if (item.id === action.payload.id) {
+          return [item, item.unit++];
+        } else {
+          return item;
+        }
+      });
     }
   }
 });
 
-export const { addProduct, removeProduct, removeOneUnit } = cartSlice.actions;
+export const { addProduct, removeProduct, removeOneUnit, addOneUnit } = cartSlice.actions;
 export const selectCartProducts = (state) => state.cart.items;
 
 export default cartSlice.reducer;

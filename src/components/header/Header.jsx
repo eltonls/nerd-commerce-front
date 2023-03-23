@@ -79,7 +79,12 @@ const Header = () => {
           <IconButton onClick={handleCartOpen} size="medium" edge="end" color="inherit">
             <ShoppingBasketIcon />
           </IconButton>
-          <Drawer anchor="right" onClose={handleCartOpen} open={isCartOpen}>
+          <Drawer
+            anchor="right"
+            onClose={handleCartOpen}
+            open={isCartOpen}
+            sx={{ maxWidth: "80vw" }}
+          >
             <Cart />
           </Drawer>
         </Toolbar>

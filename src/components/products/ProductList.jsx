@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import Container from "@mui/material/Container";
 import { fetchProducts } from "../../features/ProductSlice";
 import { useSelector, useDispatch } from "react-redux";
 import ListItem from "@mui/material/ListItem";
@@ -24,11 +27,11 @@ function ProductList() {
 
   if (productFetchStatus === "succeeded") {
     content = products.map((product) => (
-      <ListItem key={product.id} sx={{ width: "100%", maxWidth: 400, height: 500 }}>
+      <ListItem key={product.id} sx={{ width: "100%", maxWidth: 400 }}>
         <ProductCard
           id={product.id}
           name={product.name}
-          price={product.price}
+          price={Number(product.price)}
           brand={product.brand}
           description={product.description}
           imageUrl={product.imageUrl}
@@ -42,17 +45,25 @@ function ProductList() {
   }
 
   return (
-    <List
-      sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        flexDirection: { sm: "column", md: "row" },
-        alignItems: "center",
-        justifyContent: "space-around"
-      }}
-    >
-      {content}
-    </List>
+    <React.Fragment>
+      <Container disableGutters sx={{ paddingY: 2 }}>
+        <Typography align="left" variant="h5" component="h2" color="text.secondary" gutterBottom>
+          Produtos
+        </Typography>
+        <Divider />
+      </Container>
+      <List
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          flexDirection: { sm: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "space-around"
+        }}
+      >
+        {content}
+      </List>
+    </React.Fragment>
   );
 }
 

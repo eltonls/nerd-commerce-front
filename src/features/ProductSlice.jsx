@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
-  const BASE_LINK = "https://nerd-commerce-api.onrender.com/products";
+  // const BASE_LINK =  "https://nerd-commerce-api.onrender.com/products";
+  const BASE_LINK = "http://localhost:3000/products";
   const fetchConfig = { headers: { "Access-Control-Allow-Origin": "*" } };
 
   const response = await fetch(BASE_LINK, fetchConfig);

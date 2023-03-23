@@ -8,7 +8,7 @@ import RemoveCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import AddCircleIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircleRounded";
 import { useDispatch } from "react-redux";
-import { removeProduct, removeOneUnit, addProduct } from "../../features/CartSlice";
+import { removeProduct, removeOneUnit, addProduct, addOneUnit } from "../../features/CartSlice";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -18,7 +18,7 @@ const CartItem = (props) => {
 
   const removeOneUnitHandler = () => {
     if (unit > 1) {
-      dispatch(removeOneUnit(props));
+      dispatch(removeOneUnit(props, 1));
     } else {
       dispatch(removeProduct(props));
     }
@@ -28,10 +28,10 @@ const CartItem = (props) => {
     <ListItem>
       <Card sx={{ width: "100%" }}>
         <CardContent>
-          <Typography variant="h5" gutterBottom>
-            {name}
+          <Typography gutterBottom>{name}</Typography>
+          <Typography color="text-secondary" sx={{ fontWeight: 700 }}>
+            R$ {(price * unit).toFixed(2)}
           </Typography>
-          <Typography color="text-secondary">{price}</Typography>
           <Typography color="text-secondary">Quantidade: {unit}</Typography>
         </CardContent>
         <CardActions>
@@ -45,7 +45,7 @@ const CartItem = (props) => {
           <IconButton
             edge="end"
             aria-label="add more units"
-            onClick={() => dispatch(addProduct(props))}
+            onClick={() => dispatch(addOneUnit(props))}
           >
             <AddCircleIcon />
           </IconButton>
@@ -60,6 +60,7 @@ const CartItem = (props) => {
 
 CartItem.propTypes = {
   id: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
