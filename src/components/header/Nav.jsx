@@ -9,8 +9,6 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { Link as RouterLink } from "react-router-dom";
 
-const navItems = ["Produtos", "Sobre Nós"];
-
 const Nav = () => {
   return (
     <Box sx={{ textAlign: "center" }}>
@@ -33,6 +31,15 @@ const Nav = () => {
             <ListItemText>
               <Link component={RouterLink} to="/about">
                 Sobre
+              </Link>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText>
+              <Link component={RouterLink} to="/user">
+                Login
               </Link>
             </ListItemText>
           </ListItemButton>

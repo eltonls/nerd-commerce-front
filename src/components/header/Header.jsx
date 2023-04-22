@@ -45,6 +45,15 @@ const Header = () => {
             <ListItem disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText>
+                  <Link component={RouterLink} to="/user" sx={{ color: "white" }}>
+                    Login
+                  </Link>
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText>
                   <Link component={RouterLink} to="/about" sx={{ color: "white" }}>
                     Sobre
                   </Link>
